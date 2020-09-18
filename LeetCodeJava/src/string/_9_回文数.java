@@ -1,4 +1,4 @@
-package 每日一题;
+package string;
 
 /**
  * url:https://leetcode-cn.com/problems/palindrome-number/
