@@ -17,8 +17,20 @@ package linkedlist;
  * LeetCodeTesting 6/5/20
  */
 public class _83_Remove_Duplicates_from_Sorted_List {
+    public static ListNode deleteDuplicates(ListNode listNode) {
+        ListNode dummy = new ListNode(-101, listNode);
+        ListNode cur = dummy;
+        while (cur != null) {
+            if (cur.next != null && cur.val == cur.next.val) {
+                cur.next = cur.next.next;
+            } else {
+                cur = cur.next;
+            }
+        }
+        return dummy.next;
+    }
 
-    public static ListNode deleteDuplicates(ListNode head) {
+    public static ListNode deleteDuplicates2(ListNode head) {
         ListNode dummy = new ListNode(-1);
         ListNode pre = null;
         dummy.next = head;

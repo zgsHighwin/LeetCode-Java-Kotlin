@@ -37,33 +37,24 @@ package string;
 public class _1221_分割平衡字符串 {
     public static int balancedStringSplit(String s) {
         char[] chars = s.toCharArray();
-        char lastChar = 0;
-        int i = 0;
-        int repeatCount = 0;
-        int res = 0;
-        for (; ; ) {
-            if (lastChar == 0) {
-                lastChar = chars[i];
-                i++;
-                repeatCount++;
-            } else {
-                if (lastChar == chars[i]) {
-                    i++;
-                    repeatCount++;
-                } else {
-                    i += repeatCount;
-                    repeatCount = 0;
-                    lastChar = 0;
-                    res++;
-                }
+        int c = 0;
+        int r = 0;
+        for (char cha : chars) {
+            if (cha == 'R') {
+                c++;
             }
-            if (i >= chars.length) {
-                return res;
+            if (cha == 'L') {
+                c--;
+            }
+            if (c == 0) {
+                r++;
             }
         }
+        return r;
     }
 
     public static void main(String[] args) {
         System.out.println(balancedStringSplit("RRLRRLRLLLRL"));
+
     }
 }
