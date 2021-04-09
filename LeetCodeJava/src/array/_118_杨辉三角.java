@@ -51,11 +51,11 @@ public class _118_杨辉三角 {
         for (int i = 1; i < numRows; i++) {
             List<Integer> preL = outL.get(i - 1);
             List<Integer> currL = new ArrayList<>();
-            for (int j = 0; j < i+1; j++) {
+            for (int j = 0; j < i + 1; j++) {
                 if (j == 0 || j == i) {
                     currL.add(1);
                 } else {
-                    currL.add(preL.get(j-1) + preL.get(j));
+                    currL.add(preL.get(j - 1) + preL.get(j));
                 }
             }
             outL.add(currL);
